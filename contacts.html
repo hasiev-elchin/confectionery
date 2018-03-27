@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="page" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>«Виктория» – производитель хлебобулочных и кондитерских изделий</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="page__body">
+<header class="page-header">
+  <nav class="main-nav main-nav--closed main-nav--nojs">
+    <button class="main-nav__toggle"><span class="visually-hidden">Открыть меню</span></button>
+    <div class="main-nav__wrapper">
+      <ul class="main-nav__list site-list">
+        <li class="site-list__item">
+          <a href="index.html">Главная</a>
+        </li>
+        <li class="site-list__item">
+          <a href="about.html">О компании</a>
+        </li>
+        <li class="site-list__item">
+          <a href="production.html">Продукция</a>
+        </li>
+        <li class="site-list__item site-list__item--active">
+          <a>Контакты</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="breadcrumbs">
+    <div class="breadcrumbs__wrapper">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a href="index.html">Главная</a>
+        </li>
+        <li class="breadcrumbs__item breadcrumbs__item--current">
+          <a>Контакты</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<main class="page-main">
+  <section class="contacts">
+    <div class="contacts__wrapper">
+      <h1 class="title">Контакты</h1>
+      <div class="contacts__content">
+        <div id="map" class="contacts__map"></div>
+        <table class="contacts__table">
+          <tr>
+            <th>Адрес</th>
+            <td>Москва, ул. Зеленая, 1Б</td>
+          </tr>
+          <tr>
+            <th>Телефон</th>
+            <td>+7 (495) 012-34-56</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>+8 (961) 789-10-11</td>
+          </tr>
+          <tr>
+            <th>E-mail</th>
+            <td>info@viktoriya.ru</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="page-footer">
+  <div class="page-footer__wrapper">
+    <ul class="site-list site-list--footer">
+      <li class="site-list__item site-list__item--footer">
+        <a href="#">О компании</a>
+      </li>
+      <li class="site-list__item site-list__item--footer">
+        <a href="#">Продукция</a>
+      </li>
+      <li class="site-list__item site-list__item--footer">
+        <a href="#">Контакты</a>
+      </li>
+    </ul>
+    <p class="copyright">
+      © 2017, Виктория. Все права защищены
+    </p>
+  </div>
+</footer>
+
+<script>
+	var mainNav = document.querySelector('.main-nav'),
+		navToggle = document.querySelector('.main-nav__toggle');
+
+	mainNav.classList.remove('main-nav--nojs');
+
+	navToggle.addEventListener('click', function () {
+		if (mainNav.classList.contains('main-nav--closed')) {
+			mainNav.classList.remove('main-nav--closed');
+			mainNav.classList.add('main-nav--opened');
+		} else {
+			mainNav.classList.add('main-nav--closed');
+			mainNav.classList.remove('main-nav--opened');
+		}
+	});
+
+	var map;
+	function initMap() {
+
+		var myLatLng = {lat: 55.7582807, lng: 37.6390495};
+
+		map = new google.maps.Map(document.getElementById('map'), {
+			center: myLatLng,
+			zoom: 17,
+			disableDefaultUI: true
+		});
+	}
+</script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDusivgiw0t-ahK2IxLWtXIdNQ2gkrodFk&callback=initMap"></script>
+</body>
+</html>
